@@ -1,0 +1,34 @@
+var bank=prompt("Cумма банковского счета", 0);
+var tellprice=100;
+var tax=15;
+var acessories=10;
+var predeltrat=prompt("Какое количество денег вы готовы потратить?", bank);
+var fullprice=tellprice*tax/100+tellprice;//расчет стоимости телефона
+var fullpurchase=fullprice+acessories;//стоимость телефона с аксессуаром
+function chektrats() {//проверка корректности введеной суммы
+if (predeltrat > bank) {
+alert ("Предел трат больше распологаймой суммы");
+} else{
+function zatrati() {//проверка достоточно ли средств
+if (fullpurchase > predeltrat) {
+if (fullprice>predeltrat) {
+alert ("Покупка невозможна, недосстаточно средств");
+} else {
+var accbalance=bank-fullprice;
+alert ('Нехватка  денег на аксессуар, покупка только телефона. Остаток на счете '+accbalance);
+}} else {function raschettrat () {
+var allbill=0;
+for (var n=1; allbill+fullpurchase<=predeltrat; n++) {//цикл подсчета максимально возможного кол-ва телефонов
+allbill=fullpurchase*n;
+}
+var accbalance=bank-allbill;
+var b=n-1
+alert ("Стоимость всех телефонов "+allbill);
+alert ("Количество телефонов "+b);
+alert ('Остаток на счете '+accbalance);
+}
+raschettrat();}}
+zatrati();
+
+}}
+chektrats();
